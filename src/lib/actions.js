@@ -63,7 +63,7 @@ export async function eliminarRepartidor(formData) {
 //  ------------------------ PEDIDOS ------------------------
 
 
-export async function insertarPedido(formData) {
+export async function insertarPedido(prevState, formData) {
     const fecha_hora = new Date(formData.get('fecha_hora'))
     const nombre_cliente = formData.get('nombre_cliente')
     const direccion_cliente = formData.get('direccion_cliente')
@@ -88,12 +88,13 @@ export async function insertarPedido(formData) {
     })
 
     revalidatePath('/pedidos')
+    return { success: 'Operación realizada correctamente' }
 
 }
 
 
 
-export async function modificarPedido(formData) {
+export async function modificarPedido(prevState, formData) {
     const id = Number(formData.get('id'))
     const fecha_hora = new Date(formData.get('fecha_hora'))
     const nombre_cliente = formData.get('nombre_cliente')
@@ -123,11 +124,12 @@ export async function modificarPedido(formData) {
     })
 
     revalidatePath('/pedidos')
+    return { success: 'Operación realizada correctamente' }
 }
 
 
 
-export async function eliminarPedido(formData) {
+export async function eliminarPedido(prevState, formData) {
     const id = Number(formData.get('id'))
 
     await prisma.pedido.delete({
@@ -137,6 +139,7 @@ export async function eliminarPedido(formData) {
     })
 
     revalidatePath('/pedidos')
+    return { success: 'Operación realizada correctamente' }
 
 }
 

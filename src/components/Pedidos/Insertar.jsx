@@ -1,8 +1,22 @@
+'use client'
 import { insertarPedido } from "@/lib/actions";
+import { useActionState, useEffect, useId } from "react";
 
 function PedidoInsertar({ repartidores, pizzas }) {
+
+    const formId = useId()
+
+    const [state, action, pending] = useActionState(insertarPedido, {})
+
+    useEffect(() => {
+        if (state.success) {
+            // toast.success(state.success)
+            document.getElementById(formId)?.closest('dialog')?.close()
+        }
+    }, [state])
+
     return (
-        <form action={insertarPedido}>
+        <form action={action}>
             <input name="fecha_hora" type="datetime-local" />
             <input name="nombre_cliente" placeholder="Nombre cliente" />
             <input name="direccion_cliente" placeholder="Dirección cliente" />

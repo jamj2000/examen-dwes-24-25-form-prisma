@@ -1,11 +1,23 @@
+'use client'
 import { modificarPedido } from "@/lib/actions";
+import { useActionState, useEffect, useId } from "react";
 
 function PedidoModificar({ pedido, repartidores, pizzas }) {
+    const formId = useId()
+
+    const [state, action, pending] = useActionState(modificarPedido, {})
+
+    useEffect(() => {
+        if (state.success) {
+            // toast.success(state.success)
+            document.getElementById(formId)?.closest('dialog')?.close()
+        }
+    }, [state])
 
     const IDs = pedido.pizzas.map(p => p.id)
 
     return (
-        <form action={modificarPedido}>
+        <form action={action}>
             <input type="hidden" name="id" defaultValue={pedido.id} />
             <input name="fecha_hora" type="datetime-local" defaultValue={new Date(pedido.fecha_hora).toISOString().split('Z')[0]} />
             <input name="nombre_cliente" placeholder="Nombre cliente" defaultValue={pedido.nombre_cliente} />
