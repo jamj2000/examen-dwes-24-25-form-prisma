@@ -1,20 +1,20 @@
-import Pedidos from "@/components/Pedidos/Lista";
+import Pizzas from "@/components/Pizzas/Lista";
 import { Suspense } from "react";
 
 
-function PaginaPedidos() {
+function PaginaPizzas() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">LISTA DE PEDIDOS</h1>
+            <h1 className="text-3xl font-bold">LISTA DE PIZZAS</h1>
 
-            <Suspense fallback={"Obteniendo pedido ..."}>
-                <Pedidos />
+            <Suspense fallback={"Obteniendo pizza ..."}>
+                <Pizzas />
             </Suspense>
         </div>
     )
 
 }
 
-export default PaginaPedidos;
+export default PaginaPizzas;
 
