@@ -64,18 +64,19 @@ export async function eliminarRepartidor(formData) {
 
 
 export async function insertarPedido(formData) {
-    const nombre = formData.get('nombre')
     const fecha_hora = new Date(formData.get('fecha_hora'))
     const nombre_cliente = formData.get('nombre_cliente')
     const direccion_cliente = formData.get('direccion_cliente')
 
+    const repartidorId = Number(formData.get('repartidorId'))
+
 
     await prisma.pedido.create({
         data: {
-            nombre: nombre,
             fecha_hora: fecha_hora,
             nombre_cliente: nombre_cliente,
             direccion_cliente: direccion_cliente,
+            repartidorId: repartidorId,
         }
     })
 
@@ -87,7 +88,6 @@ export async function insertarPedido(formData) {
 
 export async function modificarPedido(formData) {
     const id = Number(formData.get('id'))
-    const nombre = formData.get('nombre')
     const fecha_hora = new Date(formData.get('fecha_hora'))
     const nombre_cliente = formData.get('nombre_cliente')
     const direccion_cliente = formData.get('direccion_cliente')
@@ -99,10 +99,10 @@ export async function modificarPedido(formData) {
             id: id
         },
         data: {
-            nombre: nombre,
             fecha_hora: fecha_hora,
             nombre_cliente: nombre_cliente,
             direccion_cliente: direccion_cliente,
+            repartidorId: repartidorId,
         }
     })
 
