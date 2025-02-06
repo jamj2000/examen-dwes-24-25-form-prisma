@@ -70,6 +70,12 @@ export async function insertarPedido(formData) {
 
     const repartidorId = Number(formData.get('repartidorId'))
 
+    const pizzasIDs = await prisma.pizza.findMany({
+        select: { id: true }
+    })
+    // console.log(pizzasIDs);
+    const connect = pizzasIDs.filter(p => formData.get(`pizza${p.id}`) !== null)
+    // console.log(connect);
 
     await prisma.pedido.create({
         data: {
@@ -77,6 +83,7 @@ export async function insertarPedido(formData) {
             nombre_cliente: nombre_cliente,
             direccion_cliente: direccion_cliente,
             repartidorId: repartidorId,
+            pizzas: { connect }
         }
     })
 
@@ -94,6 +101,14 @@ export async function modificarPedido(formData) {
 
     const repartidorId = Number(formData.get('repartidorId'))
 
+    const pizzasIDs = await prisma.pizza.findMany({
+        select: { id: true }
+    })
+    // console.log(pizzasIDs);
+    const connect = pizzasIDs.filter(p => formData.get(`pizza${p.id}`) !== null)
+    const disconnect = pizzasIDs.filter(p => formData.get(`pizza${p.id}`) === null)
+    // console.log(connect);
+
     await prisma.pedido.update({
         where: {
             id: id
@@ -103,6 +118,7 @@ export async function modificarPedido(formData) {
             nombre_cliente: nombre_cliente,
             direccion_cliente: direccion_cliente,
             repartidorId: repartidorId,
+            pizzas: { connect, disconnect }
         }
     })
 

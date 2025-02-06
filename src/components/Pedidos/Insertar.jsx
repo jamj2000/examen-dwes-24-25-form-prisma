@@ -1,6 +1,6 @@
 import { insertarPedido } from "@/lib/actions";
 
-function PedidoInsertar({ repartidores }) {
+function PedidoInsertar({ repartidores, pizzas }) {
     return (
         <form action={insertarPedido}>
             <input name="fecha_hora" type="datetime-local" />
@@ -18,6 +18,18 @@ function PedidoInsertar({ repartidores }) {
             </select>
 
 
+            {
+                pizzas.map(pizza =>
+                    <label key={pizza.id}>
+                        <input
+                            type="checkbox"
+                            name={`pizza${pizza.id}`} />
+
+                        {pizza.nombre}
+
+                    </label>
+                )
+            }
 
             <button className="border-2 border-black">Insertar pedido</button>
         </form>

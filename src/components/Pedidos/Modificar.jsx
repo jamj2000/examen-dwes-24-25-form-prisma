@@ -1,6 +1,9 @@
 import { modificarPedido } from "@/lib/actions";
 
-function PedidoModificar({ pedido, repartidores }) {
+function PedidoModificar({ pedido, repartidores, pizzas }) {
+
+    const IDs = pedido.pizzas.map(p => p.id)
+
     return (
         <form action={modificarPedido}>
             <input type="hidden" name="id" defaultValue={pedido.id} />
@@ -18,6 +21,25 @@ function PedidoModificar({ pedido, repartidores }) {
                     )
                 }
             </select>
+
+
+
+            {
+                pizzas.map(pizza =>
+                    <label key={pizza.id}>
+                        <input
+                            type="checkbox"
+                            name={`pizza${pizza.id}`}
+                            value={pizza.id}
+                            defaultChecked={IDs.includes(pizza.id)}
+                        />
+
+                        {pizza.nombre}
+
+                    </label>
+                )
+            }
+
 
             <button className="border-2 border-black">Modificar</button>
         </form>
