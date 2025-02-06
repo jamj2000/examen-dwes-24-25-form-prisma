@@ -17,7 +17,7 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
     const IDs = pedido.pizzas.map(p => p.id)
 
     return (
-        <form action={action}>
+        <form action={action} id={formId}>
             <input type="hidden" name="id" defaultValue={pedido.id} />
             <input name="fecha_hora" type="datetime-local" defaultValue={new Date(pedido.fecha_hora).toISOString().split('Z')[0]} />
             <input name="nombre_cliente" placeholder="Nombre cliente" defaultValue={pedido.nombre_cliente} />

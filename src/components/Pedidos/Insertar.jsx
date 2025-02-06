@@ -16,7 +16,7 @@ function PedidoInsertar({ repartidores, pizzas }) {
     }, [state])
 
     return (
-        <form action={action}>
+        <form action={action} id={formId}>
             <input name="fecha_hora" type="datetime-local" />
             <input name="nombre_cliente" placeholder="Nombre cliente" />
             <input name="direccion_cliente" placeholder="Dirección cliente" />
