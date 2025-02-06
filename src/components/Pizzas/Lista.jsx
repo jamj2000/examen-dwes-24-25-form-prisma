@@ -1,4 +1,5 @@
 import { obtenerPizzas } from "@/lib/data";
+import Link from "next/link";
 
 
 export default async function Pizzas() {
@@ -10,7 +11,7 @@ export default async function Pizzas() {
                 pizzas.map(pizza =>
                     <div key={pizza.id} className="p-4 mb-4 bg-slate-200 rounded-lg">
                         <div>
-                            <p>{pizza.nombre}</p>
+                            <Link href={`/pizzas/${pizza.id}`}>{pizza.nombre}</Link>
                             <p>{pizza.precio}</p>
                         </div>
                         <hr />

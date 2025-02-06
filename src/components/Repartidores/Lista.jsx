@@ -1,4 +1,5 @@
 import { obtenerRepartidores } from "@/lib/data";
+import Link from "next/link";
 
 
 export default async function Repartidores() {
@@ -10,7 +11,7 @@ export default async function Repartidores() {
                 repartidores.map(repartidor =>
                     <div key={repartidor.id} className="p-4 mb-4 bg-slate-200 rounded-lg">
                         <div>
-                            <p>{repartidor.nombre}</p>
+                            <Link href={`/repartidores/${repartidor.id}`}>{repartidor.nombre}</Link>
                             <p>{repartidor.telefono}</p>
                         </div>
                         <hr />
