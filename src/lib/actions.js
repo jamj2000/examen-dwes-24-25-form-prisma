@@ -148,7 +148,7 @@ export async function eliminarPedido(prevState, formData) {
 
 export async function insertarPizza(formData) {
     const nombre = formData.get('nombre')
-    const precio = formData.get('precio')
+    const precio = Number(formData.get('precio'))
 
 
     await prisma.pizza.create({
@@ -168,8 +168,8 @@ export async function insertarPizza(formData) {
 export async function modificarPizza(formData) {
     const id = Number(formData.get('id'))
     const nombre = formData.get('nombre')
-    const precio = formData.get('precio')
-
+    const precio = Number(formData.get('precio'))
+    
     await prisma.pizza.update({
         where: {
             id: id
