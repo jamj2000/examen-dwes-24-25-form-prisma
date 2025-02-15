@@ -1,9 +1,9 @@
 import { obtenerPedidos, obtenerPizzas, obtenerRepartidores } from "@/lib/data";
 import Link from "next/link";
-import Modal from "../Modal";
-import PedidoInsertar from "./Insertar";
-import PedidoModificar from "./Modificar";
-import PedidoEliminar from "./Eliminar";
+import Modal from "../modal";
+import PedidoInsertar from "./insertar";
+import PedidoModificar from "./modificar";
+import PedidoEliminar from "./eliminar";
 
 
 export default async function Pedidos() {

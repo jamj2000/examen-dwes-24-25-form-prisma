@@ -1,9 +1,9 @@
 import { obtenerRepartidores } from "@/lib/data";
 import Link from "next/link";
-import Modal from "../Modal";
-import RepartidorInsertar from "./Insertar";
-import RepartidorModificar from "./Modificar";
-import RepartidorEliminar from "./Eliminar";
+import Modal from "../modal";
+import RepartidorInsertar from "./insertar";
+import RepartidorModificar from "./modificar";
+import RepartidorEliminar from "./eliminar";
 
 
 export default async function Repartidores() {

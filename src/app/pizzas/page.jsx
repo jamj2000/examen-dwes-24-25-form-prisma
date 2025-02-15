@@ -1,4 +1,4 @@
-import Pizzas from "@/components/Pizzas/Lista";
+import Pizzas from "@/components/pizzas/lista";
 import { Suspense } from "react";
 
 
@@ -10,7 +10,7 @@ function PaginaPizzas() {
 
             <Suspense fallback={"Obteniendo pizza ..."}>
                 <Pizzas />
-            </Suspense>
+            </Suspense>         
         </div>
     )
 

@@ -1,4 +1,4 @@
-import Pedido from "@/components/Pedidos/Item";
+import Pedido from "@/components/pedidos/item";
 import { Suspense } from "react";
 
 

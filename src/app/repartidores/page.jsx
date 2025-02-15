@@ -1,4 +1,4 @@
-import Repartidores from "@/components/Repartidores/Lista";
+import Repartidores from "@/components/repartidores/lista";
 import { Suspense } from "react";
 
 

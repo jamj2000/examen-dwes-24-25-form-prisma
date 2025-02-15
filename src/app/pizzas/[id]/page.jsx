@@ -1,4 +1,4 @@
-import Pizza from "@/components/Pizzas/Item";
+import Pizza from "@/components/pizzas/item";
 import { Suspense } from "react";
 
 

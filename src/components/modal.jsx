@@ -29,7 +29,9 @@ function Modal({ openElement, children }) {
                 onMouseDown={handleClickOutside}
             >
 
-                <div onClick={closeModal} className="text-right"> ❌ </div>
+                <div className="text-right"> 
+                    <span onClick={closeModal}>❌</span> 
+                </div>
 
                 {children}
             </dialog>

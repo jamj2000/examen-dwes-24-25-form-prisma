@@ -1,7 +1,9 @@
 import { obtenerPizzas } from "@/lib/data";
 import Link from "next/link";
-import Modal from "../Modal";
-import PizzaInsertar from "./Insertar";
+import Modal from "../modal";
+import PizzaInsertar from "./insertar";
+import PizzaModificar from "./modificar";
+import PizzaEliminar from "./eliminar";
 
 
 export default async function Pizzas() {
