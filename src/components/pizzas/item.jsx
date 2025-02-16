@@ -9,8 +9,8 @@ export default async function Pizza({ id }) {
 
     return (
         <div>
-            <p>{pizza.nombre}</p>
-            <p>{pizza.precio}</p>
+            <div>Nombre: {pizza.nombre}</div>
+            <div>Precio: {pizza.precio}</div>
         </div>
     );
 }

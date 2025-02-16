@@ -16,7 +16,7 @@ function PedidoInsertar({ repartidores, pizzas }) {
     }, [state])
 
     return (
-        <form action={action} id={formId}>
+        <form className="flex flex-col gap-4" action={action} id={formId}>
             <input name="fecha_hora" type="datetime-local" />
             <input name="nombre_cliente" placeholder="Nombre cliente" />
             <input name="direccion_cliente" placeholder="Dirección cliente" />
@@ -45,7 +45,7 @@ function PedidoInsertar({ repartidores, pizzas }) {
                 )
             }
 
-            <button className="border-2 border-black">Insertar pedido</button>
+            <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar pedido</button>
         </form>
 
     );

@@ -18,16 +18,16 @@ function PedidoEliminar({ pedido }) {
     }, [state])
 
     return (
-        <>
+        <div className="flex flex-col gap-4">
             <h1 className="text-2xl text-red-600">¿Desea eliminar los siguentes datos?</h1>
             <p>FECHA Y HORA: {new Date(pedido.fecha_hora).toLocaleString()}</p>
             <p>NOMBRE CLIENTE: {pedido.nombre_cliente}</p>
             <p>DIRECCIÓN CLIENTE: {pedido.direccion_cliente}</p>
-            <form action={action} id={formId}>
+            <form className="flex flex-col gap-4" action={action} id={formId}>
                 <input type="hidden" name="id" defaultValue={pedido.id} />
-                <button className="border-2 border-black">Eliminar</button>
+                <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Eliminar</button>
             </form>
-        </>
+        </div>
     );
 }
 

@@ -23,14 +23,14 @@ function Modal({ openElement, children }) {
 
     return (
         <>
-            <div onClick={openModal} > {openElement} </div >
+            <div onClick={openModal} className="w-fit" >
+                {openElement}
+            </div >
 
-            <dialog ref={refModal} className="p-4"
-                onMouseDown={handleClickOutside}
-            >
+            <dialog ref={refModal} onMouseDown={handleClickOutside} className="p-12 rounded-md" >
 
-                <div className="text-right"> 
-                    <span onClick={closeModal}>❌</span> 
+                <div onClick={closeModal} className="absolute top-4 right-4 cursor-pointer" >
+                    ❌
                 </div>
 
                 {children}

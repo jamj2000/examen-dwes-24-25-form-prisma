@@ -68,7 +68,7 @@ export async function insertarPedido(prevState, formData) {
     const nombre_cliente = formData.get('nombre_cliente')
     const direccion_cliente = formData.get('direccion_cliente')
 
-    const repartidorId = Number(formData.get('repartidorId'))
+    const repartidorId = Number(formData.get('repartidorId')) || null
 
     const pizzasIDs = await prisma.pizza.findMany({
         select: { id: true }
@@ -100,7 +100,7 @@ export async function modificarPedido(prevState, formData) {
     const nombre_cliente = formData.get('nombre_cliente')
     const direccion_cliente = formData.get('direccion_cliente')
 
-    const repartidorId = Number(formData.get('repartidorId'))
+    const repartidorId = Number(formData.get('repartidorId')) || null
 
     const pizzasIDs = await prisma.pizza.findMany({
         select: { id: true }

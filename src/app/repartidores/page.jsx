@@ -6,7 +6,7 @@ function PaginaRepartidores() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">LISTA DE REPARTIDORES</h1>
+            <h1 className="text-3xl font-bold mb-4">LISTA DE REPARTIDORES</h1>
 
             <Suspense fallback={"Obteniendo repartidore ..."}>
                 <Repartidores />

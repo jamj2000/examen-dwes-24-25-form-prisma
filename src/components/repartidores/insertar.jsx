@@ -2,10 +2,10 @@ import { insertarRepartidor } from "@/lib/actions";
 
 function RepartidorInsertar() {
     return (
-        <form action={insertarRepartidor}>
+        <form className="flex flex-col gap-4" action={insertarRepartidor}>
             <input name="nombre" placeholder="Nombre" />
             <input name="telefono" placeholder="Teléfono" />
-            <button className="border-2 border-black">Insertar repartidor</button>
+            <button className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Insertar repartidor</button>
         </form>
 
     );

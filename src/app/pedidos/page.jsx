@@ -6,7 +6,7 @@ function PaginaPedidos() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">LISTA DE PEDIDOS</h1>
+            <h1 className="text-3xl font-bold mb-4">LISTA DE PEDIDOS</h1>
 
             <Suspense fallback={"Obteniendo pedido ..."}>
                 <Pedidos />

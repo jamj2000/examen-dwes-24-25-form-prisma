@@ -9,8 +9,8 @@ export default async function Repartidor({ id }) {
 
     return (
         <div>
-            <p>{repartidor.nombre}</p>
-            <p>{repartidor.telefono}</p>
+            <div>Nombre: {repartidor.nombre}</div>
+            <div>Teléfono: {repartidor.telefono}</div>
         </div>
     );
 }

@@ -7,7 +7,7 @@ async function PaginaRepartidor({ params, searchParams }) {
 
     return (
         <div>
-            <h1>DATOS DE REPARTIDOR</h1>
+            <h1 className="font-bold text-2xl">DATOS DE REPARTIDOR</h1>
             <Suspense fallback={
                 <p className="text-blue-500 text-2xl font-bold animate-pulse">
                     Obteniendo datos...
