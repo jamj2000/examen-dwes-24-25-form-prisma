@@ -17,10 +17,21 @@ function PedidoInsertar({ repartidores, pizzas }) {
 
     return (
         <form className="flex flex-col gap-4" action={action} id={formId}>
-            <input name="fecha_hora" type="datetime-local" />
-            <input name="nombre_cliente" placeholder="Nombre cliente" />
-            <input name="direccion_cliente" placeholder="Dirección cliente" />
+            <h1 className="text-xl text-blue-500">Nuevo pedido</h1>
 
+            <label> Fecha y hora:
+                <input name="fecha_hora" type="datetime-local" />
+            </label>
+
+            <label> Nombre del cliente:
+                <input name="nombre_cliente" placeholder="Nombre cliente" />
+            </label>
+
+            <label> Dirección del cliente:
+                <input name="direccion_cliente" placeholder="Dirección cliente" />
+            </label>
+
+            <p className="font-bold">Repartidor</p>
             <select name="repartidorId">
                 {
                     repartidores.map(repartidor =>
@@ -31,7 +42,7 @@ function PedidoInsertar({ repartidores, pizzas }) {
                 }
             </select>
 
-
+            <p className="font-bold">Pizzas</p>
             {
                 pizzas.map(pizza =>
                     <label key={pizza.id}>

@@ -23,8 +23,8 @@ export default async function Pedidos() {
                             <Link href={`/pedidos/${pedido.id}`} className="font-bold cursor-pointer">
                                 {new Date(pedido.fecha_hora).toLocaleString()}
                             </Link>
-                            <p>{pedido.nombre_cliente}</p>
-                            <p>{pedido.direccion_cliente}</p>
+                            <p>Nombre del cliente: {pedido.nombre_cliente}</p>
+                            <p>Dirección del cliente: {pedido.direccion_cliente}</p>
 
 
                             <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</p>}>

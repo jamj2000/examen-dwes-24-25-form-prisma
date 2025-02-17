@@ -22,7 +22,7 @@ export default async function Pizzas() {
                             <Link href={`/pizzas/${pizza.id}`} className="font-bold cursor-pointer">
                                 {pizza.nombre}
                             </Link>
-                            <p>{pizza.precio}</p>
+                            <p>{pizza.precio} €</p>
 
                             <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</p>}>
                                 <PizzaModificar pizza={pizza} />

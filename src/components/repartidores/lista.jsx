@@ -23,7 +23,7 @@ export default async function Repartidores() {
                             <Link href={`/repartidores/${repartidor.id}`} className="font-bold cursor-pointer">
                                 {repartidor.nombre}
                             </Link>
-                            <p>{repartidor.telefono}</p>
+                            <p>Teléfono: {repartidor.telefono}</p>
 
                             <Modal openElement={<span className="p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</span>}>
                                 <RepartidorModificar repartidor={repartidor} />

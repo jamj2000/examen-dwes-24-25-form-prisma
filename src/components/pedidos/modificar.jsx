@@ -18,12 +18,22 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
 
     return (
         <form className="flex flex-col gap-4" action={action} id={formId}>
+            <h1 className="text-xl text-blue-500">Modificar pedido</h1>
             <input type="hidden" name="id" defaultValue={pedido.id} />
-            <input name="fecha_hora" type="datetime-local" defaultValue={new Date(pedido.fecha_hora).toISOString().split('Z')[0]} />
-            <input name="nombre_cliente" placeholder="Nombre cliente" defaultValue={pedido.nombre_cliente} />
-            <input name="direccion_cliente" placeholder="Dirección cliente" defaultValue={pedido.direccion_cliente} />
 
+            <label> Nombre del cliente:
+                <input name="fecha_hora" type="datetime-local" defaultValue={new Date(pedido.fecha_hora).toISOString().split('Z')[0]} />
+            </label>
 
+            <label> Nombre del cliente:
+                <input name="nombre_cliente" placeholder="Nombre cliente" defaultValue={pedido.nombre_cliente} />
+            </label>
+
+            <label> Nombre del cliente:
+                <input name="direccion_cliente" placeholder="Dirección cliente" defaultValue={pedido.direccion_cliente} />
+            </label>
+            
+            <p className="font-bold">Repartidor</p>
             <select name="repartidorId" defaultValue={pedido.repartidorId} key={pedido.repartidorId}>
                 {
                     repartidores.map(repartidor =>
@@ -35,7 +45,7 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
             </select>
 
 
-
+            <p className="font-bold">Pizzas</p>
             {
                 pizzas.map(pizza =>
                     <label key={pizza.id}>
