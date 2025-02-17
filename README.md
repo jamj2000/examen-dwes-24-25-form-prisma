@@ -5,12 +5,29 @@
 
 ## INSTRUCCIONES
 
-1. Instalar dependencias:
+1. Crear base de datos `pizzeria` vacía en MySQL.
+   
+2. Renombrar .env.example -> .env y revisar DATABASE_URL
    ```
+   mv  .env.example  .env
+   ```
+ 
+3. Instalar dependencias
+   ```sh
    npm install
    ```
    
-2. Iniciar servidor de desarrollo:
+4. Crear tablas a partir del esquema de prisma
+   ```sh
+   npx  prisma  db  push
    ```
-   npm run dev
+
+5. Sembrar las tablas (seed) con datos iniciales 
+   ```sh
+   npm  run  seed
+   ```
+
+5. Iniciar servidor de desarrollo
+   ```
+   npm  run dev
    ```

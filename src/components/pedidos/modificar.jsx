@@ -21,7 +21,7 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
             <h1 className="text-xl text-blue-500">Modificar pedido</h1>
             <input type="hidden" name="id" defaultValue={pedido.id} />
 
-            <label> Nombre del cliente:
+            <label> Fecha y hora:
                 <input name="fecha_hora" type="datetime-local" defaultValue={new Date(pedido.fecha_hora).toISOString().split('Z')[0]} />
             </label>
 
