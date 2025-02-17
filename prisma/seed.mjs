@@ -15,16 +15,18 @@ const pizzas = [
 ]
 
 const pedidos = [
-    { id: 1, fecha_hora: '2024-06-01T20:00:05.000Z', nombre_cliente: 'Gloria', direccion_cliente: 'C/ Nueva, 1', 
+    {
+        id: 1, fecha_hora: '2024-06-01T20:00:05.000Z', nombre_cliente: 'Gloria', direccion_cliente: 'C/ Nueva, 1',
         repartidorId: 2,
         pizzas: {
-            connect: [{ id: 1}, { id: 3}, { id: 4}]
+            connect: [{ id: 1 }, { id: 3 }, { id: 4 }]
         }
     },
-    { id: 2, fecha_hora: '2024-06-01T20:12:05.000Z', nombre_cliente: 'Isabel', direccion_cliente: 'C/ Nueva, 2', 
+    {
+        id: 2, fecha_hora: '2024-06-01T20:12:05.000Z', nombre_cliente: 'Isabel', direccion_cliente: 'C/ Nueva, 2',
         repartidorId: 3,
         pizzas: {
-            connect: [{ id: 2}, { id: 4}]
+            connect: [{ id: 2 }, { id: 4 }]
         }
     },
 ]
