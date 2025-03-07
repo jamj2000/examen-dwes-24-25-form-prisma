@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { Toaster } from "sonner";
 
 
 export const metadata = {
@@ -12,9 +13,10 @@ export default function RootLayout({ children }) {
 
     <html lang="es">
       <body className={`antialiased min-h-screen p-10`} >
-            {children}
+        {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
-  
-);
+
+  );
 }

@@ -1,6 +1,7 @@
 'use client'
 import { eliminarPedido } from "@/lib/actions";
 import { useActionState, useEffect, useId } from "react";
+import { toast } from "sonner";
 
 
 
@@ -12,9 +13,11 @@ function PedidoEliminar({ pedido }) {
 
     useEffect(() => {
         if (state.success) {
-            // toast.success(state.success)
+            toast.success(state.success)
             document.getElementById(formId)?.closest('dialog')?.close()
         }
+        if (state.error)
+            toast.success(state.error)
     }, [state])
 
     return (

@@ -1,6 +1,7 @@
 'use client'
 import { modificarPedido } from "@/lib/actions";
 import { useActionState, useEffect, useId } from "react";
+import { toast } from "sonner";
 
 function PedidoModificar({ pedido, repartidores, pizzas }) {
     const formId = useId()
@@ -9,9 +10,11 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
 
     useEffect(() => {
         if (state.success) {
-            // toast.success(state.success)
+            toast.success(state.success)
             document.getElementById(formId)?.closest('dialog')?.close()
         }
+        if (state.error)
+            toast.success(state.error)
     }, [state])
 
     const IDs = pedido.pizzas.map(p => p.id)
@@ -32,7 +35,7 @@ function PedidoModificar({ pedido, repartidores, pizzas }) {
             <label> Nombre del cliente:
                 <input name="direccion_cliente" placeholder="Dirección cliente" defaultValue={pedido.direccion_cliente} />
             </label>
-            
+
             <p className="font-bold">Repartidor</p>
             <select name="repartidorId" defaultValue={pedido.repartidorId} key={pedido.repartidorId}>
                 {

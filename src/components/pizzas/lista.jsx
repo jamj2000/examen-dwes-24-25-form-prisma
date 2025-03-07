@@ -6,6 +6,7 @@ import PizzaModificar from "./modificar";
 import PizzaEliminar from "./eliminar";
 
 
+
 export default async function Pizzas() {
     const pizzas = await obtenerPizzas()
 
@@ -23,6 +24,7 @@ export default async function Pizzas() {
                                 {pizza.nombre}
                             </Link>
                             <p>{pizza.precio} €</p>
+
 
                             <Modal openElement={<p className="inline p-2 rounded-lg bg-indigo-500 text-white cursor-pointer">Modificar</p>}>
                                 <PizzaModificar pizza={pizza} />
