@@ -15,8 +15,6 @@ function PedidoInsertar({ repartidores, pizzas }) {
             toast.success(state.success)
             document.getElementById(formId)?.closest('dialog')?.close()
         }
-        if (state.error)
-            toast.success(state.error)
     }, [state])
 
     return (
